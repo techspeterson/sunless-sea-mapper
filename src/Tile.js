@@ -3,9 +3,11 @@ import React from "react";
 function Tile(props) {
   return (
     <div>
-      {props.tile.locations.map(location => {
-        return location.name
-      })}
+      <ul>
+        {props.tile.locations.map((location, index) => {
+          return <li key={index}>{location.name}</li>
+        })}
+      </ul>
     </div>
   )
 }

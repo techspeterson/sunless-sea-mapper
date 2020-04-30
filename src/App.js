@@ -1,6 +1,8 @@
 import React from 'react';
+import { Provider } from "react-redux";
 import './App.css';
 
+import store from "./store";
 import TileContainer from "./TileContainer"
 
 function App() {
@@ -36,14 +38,16 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <header className="App-header">
-        Sunless Sea Mapper
+    <Provider store={store}>
+      <div className="App">
+        <header className="App-header">
+          Sunless Sea Mapper
       </header>
-      <div className="map">
-        {renderMapTiles()}
+        <div className="map">
+          {renderMapTiles()}
+        </div>
       </div>
-    </div>
+    </Provider>
   );
 }
 
