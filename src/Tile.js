@@ -4,8 +4,8 @@ function Tile(props) {
   return (
     <div>
       <ul>
-        {props.tile.locations.map((location, index) => {
-          return <li key={index}>{location.name}</li>
+        {props.tile.ports.map((port, index) => {
+          return <li key={index}>{port.name}</li>
         })}
       </ul>
     </div>

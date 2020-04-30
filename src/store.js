@@ -1,31 +1,40 @@
 import { createStore } from "redux";
 
 const initialState = {
-  northTiles: {
+  west: {
+    stonesoul: false,
+    empty: false,
+    demeaux: false,
+    corsair: false,
+    shepherd: false,
+    snares: false
+  },
+  north: {
     palmerston: false,
     frostfound: false,
     void: false,
     stormbones: false
   },
-  northEastTiles: {
+  northeast: {
     voices: false,
     rattsey: false,
     lilies: false,
     steppes: false,
     coral: false
   },
-  eastTiles: {
+  east: {
     hands: false,
     calumnies: false,
     chelonate: false,
     gossamer: false
   },
-  southTiles: {
+  south: {
     promised: false,
     eye: false,
     myceligaea: false,
     autumn: false
-  }
+  },
+  fixed: {}
 }
 
 function setTile(category, tile) {

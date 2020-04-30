@@ -2,7 +2,7 @@ export default {
   palmerston: {
     id: "palmerston",
     name: "Palmerston's Reach",
-    locations: [
+    ports: [
       {
         name: "Mount Palmerston"
       },
@@ -14,7 +14,7 @@ export default {
   frostfound: {
     id: "frostfound",
     name: "Frostfound",
-    locations: [
+    ports: [
       {
         name: "Frostfound"
       }
@@ -23,7 +23,7 @@ export default {
   void: {
     id: "void",
     name: "Void's Approach",
-    locations: [
+    ports: [
       {
         name: "Avid Horizon"
       },
@@ -35,7 +35,7 @@ export default {
   stormbones: {
     id: "stormbones",
     name: "Stormbones",
-    locations: [
+    ports: [
       {
         name: "The Undercrow"
       }

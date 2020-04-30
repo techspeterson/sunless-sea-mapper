@@ -1,0 +1,23 @@
+.fixed {
+  background: grey;
+}
+
+.north {
+  background: royalblue;
+}
+
+.west {
+  background: yellow;
+}
+
+.northeast {
+  background: palevioletred;
+}
+
+.east {
+  background: orange;
+}
+
+.south {
+  background: green;
+}

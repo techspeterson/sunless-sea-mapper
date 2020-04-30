@@ -1,7 +1,7 @@
 export default {
   0: {
     name: "Boreal Reach",
-    locations: [
+    ports: [
       {
         name: "Whither"
       },
@@ -12,7 +12,7 @@ export default {
   },
   5: {
     name: "Pillared Sea",
-    locations: [
+    ports: [
       {
         name: "Irem"
       }
@@ -20,7 +20,7 @@ export default {
   },
   6: {
     name: "Tomb-Colonies",
-    locations: [
+    ports: [
       {
         name: "Venderbight"
       }
@@ -28,7 +28,7 @@ export default {
   },
   12: {
     name: "Southern Archipelago",
-    locations: [
+    ports: [
       {
         name: "London"
       },
@@ -45,7 +45,7 @@ export default {
   },
   18: {
     name: "Cumaean Canal",
-    locations: [
+    ports: [
       {
         name: "Cumaean Canal Staging Area"
       }
@@ -53,7 +53,7 @@ export default {
   },
   24: {
     name: "Iron Republic",
-    locations: [
+    ports: [
       {
         name: "Iron Republic"
       }
@@ -61,7 +61,7 @@ export default {
   },
   30: {
     name: "Dawn's Edge",
-    locations: [
+    ports: [
       {
         name: "Grand Geode"
       }
@@ -69,7 +69,7 @@ export default {
   },
   31: {
     name: "The Carnelian Coast",
-    locations: [
+    ports: [
       {
         name: "Port Carnelian"
       }
@@ -77,11 +77,11 @@ export default {
   },
   32: {
     name: "Crying Heights",
-    locations: []
+    ports: []
   },
   33: {
     name: "Adam's Cape",
-    locations: [
+    ports: [
       {
         name: "Adam's Way"
       }
@@ -89,7 +89,7 @@ export default {
   },
   34: {
     name: "Southern Wall",
-    locations: [
+    ports: [
       {
         name: "Varchas"
       }
@@ -97,7 +97,7 @@ export default {
   },
   35: {
     name: "Sea of Statues",
-    locations: [
+    ports: [
       {
         name: "Kingeater's Castle"
       }

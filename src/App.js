@@ -4,6 +4,12 @@ import './App.css';
 
 import store from "./store";
 import TileContainer from "./TileContainer"
+import fixedTilesList from "./MapTiles/fixed/list";
+import northTilesList from "./MapTiles/north/list";
+import northEastTilesList from "./MapTiles/northeast/list";
+import eastTilesList from "./MapTiles/east/list";
+import southTilesList from "./MapTiles/south/list";
+import westTilesList from "./MapTiles/west/list";
 
 function App() {
   const renderMapTiles = () => {
@@ -15,25 +21,33 @@ function App() {
 
     return [...Array(36)].map((box, index) => {
       let key;
+      let list;
+
       if (n.includes(index)) {
-        key = "n";
+        key = "north";
+        list = northTilesList;
       }
       else if (w.includes(index)) {
-        key = "w";
+        key = "west";
+        list = westTilesList;
       }
       else if (ne.includes(index)) {
-        key = "ne";
+        key = "northeast";
+        list = northEastTilesList;
       }
       else if (e.includes(index)) {
-        key = "e";
+        key = "east";
+        list = eastTilesList;
       }
       else if (s.includes(index)) {
-        key = "s";
+        key = "south";
+        list = southTilesList;
       }
       else {
-        key = "f";
+        key = "fixed";
+        list = fixedTilesList;
       }
-      return <TileContainer key={index} index={index} type={key} />
+      return <TileContainer key={index} index={index} type={key} list={list} />
     })
   }
 
