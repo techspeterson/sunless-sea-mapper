@@ -1,0 +1,21 @@
+.port-report-container {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  padding: 0 10px;
+}
+
+.port-report-list {
+  list-style-type: none;
+  text-align: left;
+  overflow: auto;
+  padding: 0;
+}
+
+.port-report-checkbox {
+  margin-right: 10px;
+}
+
+.collected {
+  opacity: 0.5;
+}

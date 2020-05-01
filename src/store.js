@@ -36,7 +36,8 @@ const initialState = {
     autumn: false
   },
   fixed: {},
-  ports: portsList
+  ports: portsList,
+  hideCollected: false
 }
 
 function loadData() {
@@ -51,8 +52,16 @@ function setReportCollected(port, value) {
   return { type: "SET_REPORT_COLLECTED", port, value }
 }
 
+function toggleHideCollected(value) {
+  return { type: "HIDE_COLLECTED", value }
+}
+
 function clearAllReports() {
   return { type: "CLEAR_ALL_REPORTS" }
+}
+
+function setLocalStorage(key, value) {
+  localStorage.setItem(key, JSON.stringify(value));
 }
 
 function reducer(state = initialState, action) {
@@ -72,19 +81,23 @@ function reducer(state = initialState, action) {
       let newTiles = { ...newState[action.category] };
       newTiles[action.tile] = true;
       newState[action.category] = newTiles;
-      localStorage.setItem(action.category, JSON.stringify(newTiles));
+      setLocalStorage(action.category, newTiles);
       break;
     case "SET_REPORT_COLLECTED":
       newPorts[action.port].collected = action.value;
       newState.ports = newPorts;
-      localStorage.setItem("ports", JSON.stringify(newPorts));
+      setLocalStorage("ports", newPorts);
+      break;
+    case "HIDE_COLLECTED":
+      newState.hideCollected = action.value;
+      setLocalStorage("hideCollected", action.value)
       break;
     case "CLEAR_ALL_REPORTS":
       for (let key in newPorts) {
         newPorts[key].collected = false;
       }
       newState.ports = newPorts;
-      localStorage.setItem("ports", JSON.stringify(newPorts));
+      setLocalStorage("ports", newPorts);
       break;
     default:
       break;
@@ -94,4 +107,4 @@ function reducer(state = initialState, action) {
 }
 
 export default createStore(reducer);
-export { loadData, setTile, setReportCollected, clearAllReports };
+export { loadData, setTile, setReportCollected, toggleHideCollected, clearAllReports };
