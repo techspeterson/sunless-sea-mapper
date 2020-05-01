@@ -11,6 +11,10 @@
   font-size: calc(10px + 2vmin);
 }
 
+.container {
+  display: flex;
+}
+
 .map, .tileContainer {
   border: 1px solid black;
 }

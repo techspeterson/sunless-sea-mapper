@@ -3,7 +3,8 @@ import { Provider } from "react-redux";
 import './App.css';
 
 import store from "./store";
-import TileContainer from "./TileContainer"
+import TileContainer from "./TileContainer";
+import PortReports from "./PortReports";
 import fixedTilesList from "./MapTiles/fixed/list";
 import northTilesList from "./MapTiles/north/list";
 import northEastTilesList from "./MapTiles/northeast/list";
@@ -56,9 +57,12 @@ function App() {
       <div className="App">
         <header className="App-header">
           Sunless Sea Mapper
-      </header>
-        <div className="map">
-          {renderMapTiles()}
+        </header>
+        <div className="container">
+          <PortReports />
+          <div className="map">
+            {renderMapTiles()}
+          </div>
         </div>
       </div>
     </Provider>
