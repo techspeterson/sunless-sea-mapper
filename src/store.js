@@ -39,6 +39,10 @@ const initialState = {
   ports: portsList
 }
 
+function loadData() {
+  return { type: "LOAD_DATA" }
+}
+
 function setTile(category, tile) {
   return { type: "SET_TILE", category, tile }
 }
@@ -56,22 +60,31 @@ function reducer(state = initialState, action) {
   let newPorts = { ...newState.ports };
 
   switch (action.type) {
+    case "LOAD_DATA":
+      for (let key in newState) {
+        const item = localStorage.getItem(key);
+        if (item) {
+          newState[key] = JSON.parse(item);
+        }
+      }
+      break;
     case "SET_TILE":
       let newTiles = { ...newState[action.category] };
       newTiles[action.tile] = true;
       newState[action.category] = newTiles;
+      localStorage.setItem(action.category, JSON.stringify(newTiles));
       break;
     case "SET_REPORT_COLLECTED":
       newPorts[action.port].collected = action.value;
       newState.ports = newPorts;
+      localStorage.setItem("ports", JSON.stringify(newPorts));
       break;
     case "CLEAR_ALL_REPORTS":
-      console.log("hello");
-
       for (let key in newPorts) {
         newPorts[key].collected = false;
       }
       newState.ports = newPorts;
+      localStorage.setItem("ports", JSON.stringify(newPorts));
       break;
     default:
       break;
@@ -81,4 +94,4 @@ function reducer(state = initialState, action) {
 }
 
 export default createStore(reducer);
-export { setTile, setReportCollected, clearAllReports };
+export { loadData, setTile, setReportCollected, clearAllReports };
