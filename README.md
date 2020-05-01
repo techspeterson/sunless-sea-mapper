@@ -7,9 +7,11 @@ Run `yarn start` to start the app in development mode. Open [http://localhost:30
 
 Each tile on the map is either fixed (shown in grey), or randomly chosen from a given set of tiles (grouped by colour). Click on the name of a region to assign it to that tile and view the ports in that region.
 
+Track the port reports you've collected with the checklist on the side. Choose to either grey out the collected reports or hide them completely. Hit "Clear All" to reset the checklist.
+
+Data is saved to local storage and will persist upon reloading the page.
+
 ## Planned features
 - Quick visualisation of shop contents for each port
 - Filter ports by item availability
-- Port report tracker
 - Make notes, mark ports as must-visit locations
-- Persistent data
