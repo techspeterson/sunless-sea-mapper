@@ -4,34 +4,34 @@ export default {
   hands: {
     id: "hands",
     name: "The Empire of Hands",
-    ports: [
-      ports.empireofhands
-    ]
+    ports: {
+      empireofhands: ports.empireofhands
+    }
   },
   calumnies: {
     id: "calumnies",
     name: "The Calumnies",
-    ports: [
-      ports.aestival,
-      ports.hideaway
-    ]
+    ports: {
+      aestival: ports.aestival,
+      hideaway: ports.hideaway
+    }
   },
   chelonate: {
     id: "chelonate",
     name: "The Chelonate",
-    ports: [
-      ports.chelonate,
-      ports.gantpole
-    ]
+    ports: {
+      chelonate: ports.chelonate,
+      gantpole: ports.gantpole
+    }
   },
   gossamer: {
     id: "gossamer",
     name: "Gossamer Way",
-    ports: [
-      ports.savioursrocks,
-      {
+    ports: {
+      savioursrocks: ports.savioursrocks,
+      nocturne: {
         name: "The Wreck of the Nocturne"
       }
-    ]
+    }
   }
 }

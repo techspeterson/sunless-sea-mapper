@@ -3,78 +3,78 @@ import ports from "../../ports-list.js";
 export default {
   0: {
     name: "Boreal Reach",
-    ports: [
-      ports.whither,
-      ports.codex
-    ]
+    ports: {
+      whither: ports.whither,
+      codex: ports.codex
+    }
   },
   5: {
     name: "Pillared Sea",
-    ports: [
-      ports.irem
-    ]
+    ports: {
+      irem: ports.irem
+    }
   },
   6: {
     name: "Tomb-Colonies",
-    ports: [
-      ports.venderbight
-    ]
+    ports: {
+      venderbight: ports.venderbight
+    }
   },
   12: {
     name: "Southern Archipelago",
-    ports: [
-      {
+    ports: {
+      london: {
         name: "London"
       },
-      ports.hunterskeep,
-      ports.lowbarnet,
-      ports.muttonisland
-    ]
+      hunterskeep: ports.hunterskeep,
+      lowbarnet: ports.lowbarnet,
+      muttonisland: ports.muttonisland
+    }
   },
   18: {
     name: "Cumaean Canal",
-    ports: [
-      ports.cumaeancanal
-    ]
+    ports: {
+      cumaeancanal: ports.cumaeancanal
+    }
   },
   24: {
     name: "Iron Republic",
-    ports: [
-      ports.ironrepublic
-    ]
+    ports: {
+      ironrepublic: ports.ironrepublic
+    }
   },
   30: {
     name: "Dawn's Edge",
-    ports: [
-      ports.grandgeode
-    ]
+    ports: {
+      grandgeode: ports.grandgeode
+    }
   },
   31: {
     name: "The Carnelian Coast",
-    ports: [
-      ports.portcarnelian
-    ]
+    ports: {
+      portcarnelian: ports.portcarnelian
+    }
   },
   32: {
     name: "Crying Heights",
-    ports: []
+    ports: {}
   },
   33: {
     name: "Adam's Cape",
-    ports: [
-      ports.adamsway
-    ]
+    ports: {
+      adamsway: ports.adamsway
+    }
   },
   34: {
     name: "Southern Wall",
-    ports: [
-      ports.varchas
-    ]
+    ports: {
+      varchas: ports.varchas
+    }
   },
   35: {
     name: "Sea of Statues",
-    ports: [
-      ports.kingeaterscastle
-    ]
+    ports: {
+      kingeaterscastle: ports.kingeaterscastle
+    }
   }
 }

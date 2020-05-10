@@ -4,42 +4,42 @@ export default {
   voices: {
     id: "voices",
     name: "Sea of Voices",
-    ports: [
-      ports.godfall,
-      ports.polythreme,
-      ports.dahut
-    ]
+    ports: {
+      godfall: ports.godfall,
+      polythreme: ports.polythreme,
+      dahut: ports.dahut
+    }
   },
   rattsey: {
     id: "rattsey",
     name: "Rattsey",
-    ports: [
-      ports.nuncio,
-      ports.nook
-    ]
+    ports: {
+      nuncio: ports.nuncio,
+      nook: ports.nook
+    }
   },
   lilies: {
     id: "lilies",
     name: "Sea of Lilies",
-    ports: [
-      ports.wisdom,
-      ports.scrimshander
-    ]
+    ports: {
+      wisdom: ports.wisdom,
+      scrimshander: ports.scrimshander
+    }
   },
   steppes: {
     id: "steppes",
     name: "Salt Steppes",
-    ports: [
-      ports.khansglory,
-      ports.khansheart,
-      ports.khansshadow
-    ]
+    ports: {
+      khansglory: ports.khansglory,
+      khansheart: ports.khansheart,
+      khansshadow: ports.khansshadow
+    }
   },
   coral: {
     id: "coral",
     name: "Principles of Coral",
-    ports: [
-      ports.portcecil
-    ]
+    ports: {
+      portcecil: ports.portcecil
+    }
   }
 }

@@ -4,31 +4,31 @@ export default {
   palmerston: {
     id: "palmerston",
     name: "Palmerston's Reach",
-    ports: [
-      ports.mountpalmerston,
-      ports.anthe
-    ]
+    ports: {
+      mountpalmerston: ports.mountpalmerston,
+      anthe: ports.anthe
+    }
   },
   frostfound: {
     id: "frostfound",
     name: "Frostfound",
-    ports: [
-      ports.frostfound
-    ]
+    ports: {
+      frostfound: ports.frostfound
+    }
   },
   void: {
     id: "void",
     name: "Void's Approach",
-    ports: [
-      ports.avidhorizon,
-      ports.chapeloflights
-    ]
+    ports: {
+      avidhorizon: ports.avidhorizon,
+      chapeloflights: ports.chapeloflights
+    }
   },
   stormbones: {
     id: "stormbones",
     name: "Stormbones",
-    ports: [
-      ports.undercrow
-    ]
+    ports: {
+      undercrow: ports.undercrow
+    }
   }
 }

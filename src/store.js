@@ -60,7 +60,7 @@ const initialState = {
     28: null
   },
   fixed: {},
-  ports: portsList,
+  ports: { ...portsList },
   hideCollected: false
 }
 
@@ -108,17 +108,32 @@ function reducer(state = initialState, action) {
     case "RESET_DATA":
       console.log("RESET")
       newState = { ...initialState };
-      newState.ports = { ...portsList };
-      for (let key in initialState) {
-        setLocalStorage(key, initialState[key]);
+
+      const fixedPorts = ["adamsway", "codex", "cumeancanal", "grandgeode", "hunterskeep", "ironrepublic", "kingeaterscastle", "lowbarnet", "muttonisland", "portcarnelian", "varchas", "venderbight", "whither"]
+      for (let port in newPorts) {
+        newPorts[port].collected = false;
+
+        if (!fixedPorts.includes(port)) {
+          newPorts[port].available = false;
+        }
+      }
+      newState.ports = newPorts;
+
+      for (let key in newState) {
+        setLocalStorage(key, newState[key]);
       }
       break;
     case "SET_TILE":
       let newTiles = { ...newState[action.category] };
-      newTiles[action.tile] = true;
-      newTiles[action.tileIndex] = action.tile;
+      newTiles[action.tile.id] = true;
+      newTiles[action.tileIndex] = action.tile.id;
+      for (let port in action.tile.ports) {
+        newPorts[port].available = true;
+      }
       newState[action.category] = newTiles;
+      newState.ports = newPorts;
       setLocalStorage(action.category, newTiles);
+      setLocalStorage("ports", newState.ports);
       break;
     case "SET_REPORT_COLLECTED":
       newPorts[action.port].collected = action.value;

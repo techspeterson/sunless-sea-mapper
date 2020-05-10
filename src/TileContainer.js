@@ -6,12 +6,6 @@ import "./Tile.css"
 
 function mapStateToProps(state) {
   return {
-    // north: state.north,
-    // east: state.east,
-    // northeast: state.northeast,
-    // west: state.west,
-    // south: state.south,
-    // fixed: state.fixed
   }
 }
 
@@ -40,7 +34,7 @@ function TileContainer(props) {
   }, [index, tileOptions, tileStatus, type])
 
   const setTile = (tile) => {
-    props.setTile(type, tile.id, index);
+    props.setTile(type, tile, index);
     setLocalTile(tileOptions[tile.id]);
   }
 

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { connect } from "react-redux";
 import { loadData, resetData } from "./store";
 import TileContainer from "./TileContainer";
@@ -28,20 +28,18 @@ const mapDispatchToProps = {
   resetData
 }
 
-function Container(props) {
-  const { loadData, resetData } = props;
-
-  useEffect(() => {
+class Container extends React.Component {
+  componentDidMount() {
     try {
-      loadData()
+      this.props.loadData();
     }
     catch {
       console.log("error loading data");
-      resetData();
+      this.props.resetData();
     }
-  }, [loadData, resetData])
+  }
 
-  const renderMapTiles = () => {
+  renderMapTiles = () => {
     const n = [1, 2, 3, 4];
     const w = [7, 8, 13, 14, 19, 20];
     const ne = [9, 10, 15, 16, 21];
@@ -76,19 +74,21 @@ function Container(props) {
         key = "fixed";
         list = fixedTilesList;
       }
-      return <TileContainer key={index} index={index} type={key} tileOptions={list} tileStatus={props[key]} />
+      return <TileContainer key={index} index={index} type={key} tileOptions={list} tileStatus={this.props[key]} />
     })
   }
 
-  return (
-    <div className="container">
-      <Options />
-      <PortReports />
-      <div className="map">
-        {renderMapTiles()}
+  render() {
+    return (
+      <div className="container">
+        <Options />
+        <PortReports />
+        <div className="map">
+          {this.renderMapTiles()}
+        </div>
       </div>
-    </div>
-  )
+    )
+  }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Container);

@@ -27,7 +27,7 @@ function PortReports(props) {
 
   let ports = Object.entries(props.ports)
     .filter(port => {
-      return port[1].report;
+      return port[1].available;
     })
 
   if (props.hideCollected) {

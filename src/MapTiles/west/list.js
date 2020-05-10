@@ -4,44 +4,44 @@ export default {
   stonesoul: {
     id: "stonesoul",
     name: "Stonesoul Isles",
-    ports: [
-      ports.saltlions,
-      ports.wrack
-    ]
+    ports: {
+      saltlions: ports.saltlions,
+      wrack: ports.wrack
+    }
   },
   empty: {
     id: "empty",
     name: "Empty Tile",
-    ports: []
+    ports: {}
   },
   demeaux: {
     id: "demeaux",
     name: "Demeaux's Gate",
-    ports: [
-      ports.demeauxisland
-    ]
+    ports: {
+      demeauxisland: ports.demeauxisland
+    }
   },
   corsair: {
     id: "corsair",
     name: "Corsair's Forest",
-    ports: [
-      ports.gaidersmourn
-    ]
+    ports: {
+      gaidersmourn: ports.gaidersmourn
+    }
   },
   shepherd: {
     id: "shepherd",
     name: "Shepherd's Wash",
-    ports: [
-      ports.shepherdisles,
-      ports.abbeyrock,
-      ports.stationiii
-    ]
+    ports: {
+      shepherdisles: ports.shepherdisles,
+      abbeyrock: ports.abbeyrock,
+      stationiii: ports.stationiii
+    }
   },
   snares: {
     id: "snares",
     name: "The Snares",
-    ports: [
-      ports.pigmoteisle
-    ]
+    ports: {
+      pigmoteisle: ports.pigmoteisle
+    }
   }
 }

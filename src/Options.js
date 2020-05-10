@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { resetData } from "./store";
+import { loadData, resetData } from "./store";
 
 function mapStateToProps(state) {
   return {
@@ -9,21 +9,30 @@ function mapStateToProps(state) {
 }
 
 const mapDispatchToProps = {
-  resetData
+  loadData, resetData
 }
 
 function Options(props) {
-  const { resetData } = props;
-
   const resetMap = () => {
     const confirm = window.confirm("Are you sure you want to reset the map?")
     if (confirm) {
-      resetData();
+      props.resetData();
     }
   }
 
+  // const loadMap = () => {
+  //   try {
+  //     props.loadData();
+  //   }
+  //   catch {
+  //     console.log("error loading data");
+  //     props.resetData();
+  //   }
+  // }
+
   return (
     <div>
+      {/* <button onClick={loadMap}>Load Map</button> */}
       <button onClick={resetMap}>Reset Map</button>
     </div>
   )
