@@ -31,7 +31,7 @@ const mapDispatchToProps = {
 class Container extends React.Component {
   componentDidMount() {
     try {
-      // this.props.loadData();
+      this.props.loadData();
     }
     catch {
       console.log("error loading data");
