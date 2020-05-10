@@ -3,13 +3,21 @@ import { connect } from "react-redux";
 
 function mapStateToProps(state) {
   return {
-    allPorts: state.ports
+    allPorts: state.ports,
+    hideUnderwater: state.hideUnderwater
   }
 }
 
 function Tile(props) {
-  const ports = Object.entries(props.tile.ports);
-  const { allPorts } = props;
+  const { allPorts, hideUnderwater } = props;
+
+  let ports = Object.entries(props.tile.ports);
+
+  if (hideUnderwater) {
+    ports = ports.filter(port => {
+      return !port[1].underwater;
+    })
+  }
 
   return (
     <div>

@@ -1,15 +1,15 @@
 import React from "react";
 import { connect } from "react-redux";
-import { loadData, resetData } from "./store";
+import { loadData, resetData, toggleHideUnderwater } from "./store";
 
 function mapStateToProps(state) {
   return {
-
+    hideUnderwater: state.hideUnderwater
   }
 }
 
 const mapDispatchToProps = {
-  loadData, resetData
+  loadData, resetData, toggleHideUnderwater
 }
 
 function Options(props) {
@@ -20,19 +20,16 @@ function Options(props) {
     }
   }
 
-  // const loadMap = () => {
-  //   try {
-  //     props.loadData();
-  //   }
-  //   catch {
-  //     console.log("error loading data");
-  //     props.resetData();
-  //   }
-  // }
+  const toggleUnderwater = (e) => {
+    props.toggleHideUnderwater(e.target.checked)
+  }
 
   return (
-    <div>
-      {/* <button onClick={loadMap}>Load Map</button> */}
+    <div className="optionsContainer">
+      <label htmlFor="hide-underwater">
+        <input type="checkbox" id="hide-underwater" className="port-report-checkbox" checked={props.hideUnderwater} onChange={toggleUnderwater} />
+        Hide Underwater Ports
+      </label>
       <button onClick={resetMap}>Reset Map</button>
     </div>
   )

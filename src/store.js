@@ -61,7 +61,8 @@ const initialState = {
   },
   fixed: {},
   ports: { ...portsList },
-  hideCollected: false
+  hideCollected: false,
+  hideUnderwater: true
 }
 
 function loadData() {
@@ -82,6 +83,10 @@ function setReportCollected(port, value) {
 
 function toggleHideCollected(value) {
   return { type: "HIDE_COLLECTED", value }
+}
+
+function toggleHideUnderwater(value) {
+  return { type: "HIDE_UNDERWATER", value }
 }
 
 function clearAllReports() {
@@ -109,7 +114,7 @@ function reducer(state = initialState, action) {
       console.log("RESET")
       newState = { ...initialState };
 
-      const fixedPorts = ["adamsway", "codex", "cumeancanal", "grandgeode", "hunterskeep", "ironrepublic", "kingeaterscastle", "lowbarnet", "muttonisland", "portcarnelian", "varchas", "venderbight", "whither"]
+      const fixedPorts = ["adamsway", "codex", "cumeancanal", "grandgeode", "hunterskeep", "irem", "ironrepublic", "kingeaterscastle", "lowbarnet", "muttonisland", "portcarnelian", "varchas", "venderbight", "whither"]
       for (let port in newPorts) {
         newPorts[port].collected = false;
 
@@ -144,6 +149,10 @@ function reducer(state = initialState, action) {
       newState.hideCollected = action.value;
       setLocalStorage("hideCollected", action.value)
       break;
+    case "HIDE_UNDERWATER":
+      newState.hideUnderwater = action.value;
+      setLocalStorage("hideUnderwater", action.value)
+      break;
     case "CLEAR_ALL_REPORTS":
       for (let key in newPorts) {
         newPorts[key].collected = false;
@@ -159,4 +168,4 @@ function reducer(state = initialState, action) {
 }
 
 export default createStore(reducer);
-export { loadData, resetData, setTile, setReportCollected, toggleHideCollected, clearAllReports };
+export { loadData, resetData, setTile, setReportCollected, toggleHideCollected, toggleHideUnderwater, clearAllReports };

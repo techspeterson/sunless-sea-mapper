@@ -21,13 +21,15 @@ export default {
     name: "Aigul",
     report: true,
     available: false,
-    collected: false
+    collected: false,
+    underwater: true
   },
   anthe: {
     name: "Anthe",
     report: true,
     available: false,
-    collected: false
+    collected: false,
+    underwater: true
   },
   avidhorizon: {
     name: "Avid Horizon",
@@ -63,7 +65,8 @@ export default {
     name: "Dahut",
     report: true,
     available: false,
-    collected: false
+    collected: false,
+    underwater: true
   },
   demeauxisland: {
     name: "Demeaux Island",
@@ -99,7 +102,8 @@ export default {
     name: "Gant Pole",
     report: true,
     available: false,
-    collected: false
+    collected: false,
+    underwater: true
   },
   godfall: {
     name: "Godfall",
@@ -117,7 +121,8 @@ export default {
     name: "Hideaway",
     report: true,
     available: false,
-    collected: false
+    collected: false,
+    underwater: true
   },
   hunterskeep: {
     name: "Hunter's Keep",
@@ -169,7 +174,8 @@ export default {
     name: "Low Barnet",
     report: true,
     available: true,
-    collected: false
+    collected: false,
+    underwater: true
   },
   mangrovecollege: {
     name: "Mangrove College",
@@ -193,7 +199,8 @@ export default {
     name: "Nook",
     report: true,
     available: false,
-    collected: false
+    collected: false,
+    underwater: true
   },
   nuncio: {
     name: "Nuncio",
@@ -229,7 +236,8 @@ export default {
     name: "Rosegate",
     report: true,
     available: false,
-    collected: false
+    collected: false,
+    underwater: true
   },
   saltlions: {
     name: "Salt Lions",
@@ -307,6 +315,7 @@ export default {
     name: "Wrack",
     report: true,
     available: false,
-    collected: false
+    collected: false,
+    underwater: true
   }
 }
