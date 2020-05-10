@@ -8,32 +8,56 @@ const initialState = {
     demeaux: false,
     corsair: false,
     shepherd: false,
-    snares: false
+    snares: false,
+    7: null,
+    8: null,
+    13: null,
+    14: null,
+    19: null,
+    20: null
   },
   north: {
     palmerston: false,
     frostfound: false,
     void: false,
-    stormbones: false
+    stormbones: false,
+    1: null,
+    2: null,
+    3: null,
+    4: null
   },
   northeast: {
     voices: false,
     rattsey: false,
     lilies: false,
     steppes: false,
-    coral: false
+    coral: false,
+    9: null,
+    10: null,
+    15: null,
+    16: null,
+    21: null
   },
   east: {
     hands: false,
     calumnies: false,
     chelonate: false,
-    gossamer: false
+    gossamer: false,
+    11: null,
+    17: null,
+    23: null,
+    29: null
   },
   south: {
     promised: false,
     eye: false,
     myceligaea: false,
-    autumn: false
+    autumn: false,
+    22: null,
+    25: null,
+    26: null,
+    27: null,
+    28: null
   },
   fixed: {},
   ports: portsList,
@@ -44,8 +68,12 @@ function loadData() {
   return { type: "LOAD_DATA" }
 }
 
-function setTile(category, tile) {
-  return { type: "SET_TILE", category, tile }
+function resetData() {
+  return { type: "RESET_DATA" }
+}
+
+function setTile(category, tile, tileIndex) {
+  return { type: "SET_TILE", category, tile, tileIndex }
 }
 
 function setReportCollected(port, value) {
@@ -77,9 +105,18 @@ function reducer(state = initialState, action) {
         }
       }
       break;
+    case "RESET_DATA":
+      console.log("RESET")
+      newState = { ...initialState };
+      newState.ports = { ...portsList };
+      for (let key in initialState) {
+        setLocalStorage(key, initialState[key]);
+      }
+      break;
     case "SET_TILE":
       let newTiles = { ...newState[action.category] };
       newTiles[action.tile] = true;
+      newTiles[action.tileIndex] = action.tile;
       newState[action.category] = newTiles;
       setLocalStorage(action.category, newTiles);
       break;
@@ -107,4 +144,4 @@ function reducer(state = initialState, action) {
 }
 
 export default createStore(reducer);
-export { loadData, setTile, setReportCollected, toggleHideCollected, clearAllReports };
+export { loadData, resetData, setTile, setReportCollected, toggleHideCollected, clearAllReports };

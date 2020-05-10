@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import Tile from "./Tile";
 import { setTile } from "./store"
@@ -6,12 +6,12 @@ import "./Tile.css"
 
 function mapStateToProps(state) {
   return {
-    north: state.north,
-    east: state.east,
-    northeast: state.northeast,
-    west: state.west,
-    south: state.south,
-    fixed: state.fixed
+    // north: state.north,
+    // east: state.east,
+    // northeast: state.northeast,
+    // west: state.west,
+    // south: state.south,
+    // fixed: state.fixed
   }
 }
 
@@ -20,32 +20,49 @@ const mapDispatchToProps = {
 }
 
 function TileContainer(props) {
-  const [localTile, setLocalTile] = useState(props.type === "fixed" ? props.list[props.index] : null)
+  const [localTile, setLocalTile] = useState()
+
+  const { index, type, tileStatus, tileOptions } = props;
+
+  useEffect(() => {
+    if (type === "fixed") {
+      setLocalTile(tileOptions[index]);
+    }
+    else {
+      const tile = tileStatus[index];
+      if (tile) {
+        setLocalTile(tileOptions[tile]);
+      }
+      else {
+        setLocalTile(null);
+      }
+    }
+  }, [index, tileOptions, tileStatus, type])
 
   const setTile = (tile) => {
-    props.setTile(props.type, tile.id);
-    setLocalTile(props.list[tile.id]);
+    props.setTile(type, tile.id, index);
+    setLocalTile(tileOptions[tile.id]);
   }
 
   const isTileSet = () => {
-    const unsetTiles = Object.keys(props.list).filter(tile => {
-      return !props[props.type][tile]
+    const unsetTiles = Object.keys(tileOptions).filter(tile => {
+      return !tileStatus[tile]
     });
 
     if (localTile) {
       return <Tile tile={localTile} />
     }
     else if (unsetTiles.length === 1) {
-      setTile(props.list[unsetTiles[0]])
+      setTile(tileOptions[unsetTiles[0]])
     }
     else {
       return <ul>
-        {Object.keys(props.list)
+        {Object.keys(tileOptions)
           .filter(tile => {
-            return !props[props.type][tile]
+            return !tileStatus[tile]
           })
           .map(option => {
-            const tile = props.list[option]
+            const tile = tileOptions[option]
             return <li key={tile.name} onClick={() => setTile(tile)}>{tile.name}</li>
           })}
       </ul>;
@@ -53,7 +70,7 @@ function TileContainer(props) {
   }
 
   return (
-    <div className={`tileContainer ${props.type}`}>
+    <div className={`tileContainer ${type}`}>
       {isTileSet()}
     </div>
   )

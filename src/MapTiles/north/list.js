@@ -1,44 +1,34 @@
+import ports from "../../ports-list.js";
+
 export default {
   palmerston: {
     id: "palmerston",
     name: "Palmerston's Reach",
     ports: [
-      {
-        name: "Mount Palmerston"
-      },
-      {
-        name: "Anthe"
-      }
+      ports.mountpalmerston,
+      ports.anthe
     ]
   },
   frostfound: {
     id: "frostfound",
     name: "Frostfound",
     ports: [
-      {
-        name: "Frostfound"
-      }
+      ports.frostfound
     ]
   },
   void: {
     id: "void",
     name: "Void's Approach",
     ports: [
-      {
-        name: "Avid Horizon"
-      },
-      {
-        name: "Chapel of Lights"
-      }
+      ports.avidhorizon,
+      ports.chapeloflights
     ]
   },
   stormbones: {
     id: "stormbones",
     name: "Stormbones",
     ports: [
-      {
-        name: "The Undercrow"
-      }
+      ports.undercrow
     ]
   }
 }

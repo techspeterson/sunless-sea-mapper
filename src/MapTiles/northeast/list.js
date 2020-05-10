@@ -1,65 +1,45 @@
+import ports from "../../ports-list.js";
+
 export default {
   voices: {
     id: "voices",
     name: "Sea of Voices",
     ports: [
-      {
-        name: "Godfall"
-      },
-      {
-        name: "Polythreme"
-      },
-      {
-        name: "Dahut"
-      }
+      ports.godfall,
+      ports.polythreme,
+      ports.dahut
     ]
   },
   rattsey: {
     id: "rattsey",
     name: "Rattsey",
     ports: [
-      {
-        name: "Nuncio"
-      },
-      {
-        name: "Nook"
-      }
+      ports.nuncio,
+      ports.nook
     ]
   },
   lilies: {
     id: "lilies",
     name: "Sea of Lilies",
     ports: [
-      {
-        name: "Wisdom"
-      },
-      {
-        name: "Scrimshander"
-      }
+      ports.wisdom,
+      ports.scrimshander
     ]
   },
   steppes: {
     id: "steppes",
     name: "Salt Steppes",
     ports: [
-      {
-        name: "Khan's Glory"
-      },
-      {
-        name: "Khan's Heart"
-      },
-      {
-        name: "Khan's Shadow"
-      }
+      ports.khansglory,
+      ports.khansheart,
+      ports.khansshadow
     ]
   },
   coral: {
     id: "coral",
     name: "Principles of Coral",
     ports: [
-      {
-        names: "Port Cecil"
-      }
+      ports.portcecil
     ]
   }
 }

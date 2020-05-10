@@ -1,44 +1,34 @@
+import ports from "../../ports-list.js";
+
 export default {
   hands: {
     id: "hands",
     name: "The Empire of Hands",
     ports: [
-      {
-        name: "Empire of Hands"
-      }
+      ports.empireofhands
     ]
   },
   calumnies: {
     id: "calumnies",
     name: "The Calumnies",
     ports: [
-      {
-        name: "Aestival"
-      },
-      {
-        name: "Hideaway"
-      }
+      ports.aestival,
+      ports.hideaway
     ]
   },
   chelonate: {
     id: "chelonate",
     name: "The Chelonate",
     ports: [
-      {
-        name: "The Chelonate"
-      },
-      {
-        name: "Gant Pole"
-      }
+      ports.chelonate,
+      ports.gantpole
     ]
   },
   gossamer: {
     id: "gossamer",
     name: "Gossamer Way",
     ports: [
-      {
-        name: "Saviour's Rocks"
-      },
+      ports.savioursrocks,
       {
         name: "The Wreck of the Nocturne"
       }

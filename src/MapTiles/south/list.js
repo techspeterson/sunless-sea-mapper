@@ -1,14 +1,12 @@
+import ports from "../../ports-list.js";
+
 export default {
   promised: {
     id: "promised",
     name: "The Promised Sea",
     ports: [
-      {
-        name: "The Fathomking's Hold"
-      },
-      {
-        name: "Aigul"
-      }
+      ports.fathomkingshold,
+      ports.aigul
     ]
   },
   eye: {
@@ -20,18 +18,23 @@ export default {
     id: "myceligaea",
     name: "Myceligaea",
     ports: [
-      {
-        name: "The Uttershroom"
-      }
+      ports.uttershroom
     ]
   },
   autumn: {
     id: "autumn",
     name: "Sea of Autumn",
     ports: [
-      {
-        name: "Mangrove College"
-      }
+      ports.mangrovecollege
+    ]
+  },
+  stamford: {
+    id: "stamford",
+    name: "Stamford's Expanse",
+    ports: [
+      ports.visage,
+      ports.isleofcats,
+      ports.rosegate
     ]
   }
 }

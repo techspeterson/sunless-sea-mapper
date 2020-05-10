@@ -1,8 +1,9 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import { loadData } from "./store";
+import { loadData, resetData } from "./store";
 import TileContainer from "./TileContainer";
 import PortReports from "./PortReports";
+import Options from "./Options";
 
 import fixedTilesList from "./MapTiles/fixed/list";
 import northTilesList from "./MapTiles/north/list";
@@ -13,20 +14,32 @@ import westTilesList from "./MapTiles/west/list";
 
 function mapStateToProps(state) {
   return {
-
+    north: state.north,
+    east: state.east,
+    northeast: state.northeast,
+    west: state.west,
+    south: state.south,
+    fixed: state.fixed
   }
 }
 
 const mapDispatchToProps = {
-  loadData
+  loadData,
+  resetData
 }
 
 function Container(props) {
-  const { loadData } = props;
+  const { loadData, resetData } = props;
 
   useEffect(() => {
-    loadData()
-  }, [loadData])
+    try {
+      loadData()
+    }
+    catch {
+      console.log("error loading data");
+      resetData();
+    }
+  }, [loadData, resetData])
 
   const renderMapTiles = () => {
     const n = [1, 2, 3, 4];
@@ -35,7 +48,7 @@ function Container(props) {
     const e = [11, 17, 23, 29];
     const s = [22, 25, 26, 27, 28];
 
-    return [...Array(36)].map((box, index) => {
+    return [...Array(36)].map((tile, index) => {
       let key;
       let list;
 
@@ -63,12 +76,13 @@ function Container(props) {
         key = "fixed";
         list = fixedTilesList;
       }
-      return <TileContainer key={index} index={index} type={key} list={list} />
+      return <TileContainer key={index} index={index} type={key} tileOptions={list} tileStatus={props[key]} />
     })
   }
 
   return (
     <div className="container">
+      <Options />
       <PortReports />
       <div className="map">
         {renderMapTiles()}
