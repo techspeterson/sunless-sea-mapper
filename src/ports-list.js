@@ -170,6 +170,9 @@ export default {
     available: true,
     collected: false
   },
+  london: {
+    name: "London"
+  },
   lowbarnet: {
     name: "Low Barnet",
     report: true,
@@ -194,6 +197,9 @@ export default {
     report: true,
     available: true,
     collected: false
+  },
+  nocturne: {
+    name: "The Wreck of the Nocturne"
   },
   nook: {
     name: "Nook",

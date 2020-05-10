@@ -29,9 +29,7 @@ export default {
     name: "Gossamer Way",
     ports: {
       savioursrocks: ports.savioursrocks,
-      nocturne: {
-        name: "The Wreck of the Nocturne"
-      }
+      nocturne: ports.nocturne
     }
   }
 }
