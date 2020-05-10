@@ -121,6 +121,9 @@ function reducer(state = initialState, action) {
         if (!fixedPorts.includes(port)) {
           newPorts[port].available = false;
         }
+        else {
+          newPorts[port].available = true;
+        }
       }
       newState.ports = newPorts;
 
